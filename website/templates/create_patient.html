@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Create Patient{% endblock %} {% block content
+%}
+
+<div class="container-fluid create_bg" >
+  <div class="row">
+    <form method="POST" class="create_page col-6 offset-3 ">
+      <h2 align="center">Create Patient</h2>
+    
+      <div class="form-group" style="margin-top: 40px;">
+        <input type="text" class="form-control first" id="firstName"  name="firstName" placeholder="Enter first name" />
+      </div>
+      <br />
+      <div class="btns">
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </div>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

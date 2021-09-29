@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Image{% endblock %} {% block content %}
+
+
+<div class="container upload1">
+  <h2>
+    upload Image
+  </h2>
+  <div class="row">
+    <form class="form-horizontal upload_form col-12" action="/get_output" method="post" enctype="multipart/form-data">
+
+      <div class="form-group">
+        <input type="file" class="form-control  col-5" placeholder="Hours Studied" name="my_image" id="pwd">
+        <div class="col-sm-offset-2 col-7">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+
+
+    </form>
+
+  </div>
+  <h2>
+    Show Image
+  </h2>
+  <img src="{{show_image}}" height="200px" width="200px">
+
+  <h2>{{ pred_lab }} {{ pred_perc }}</h2>
+
+</div>
+
+
+
+
+
+<form method="POST" class="container upload_form2" action="/save_result">
+  <div class="form-group">
+    <label for="patientID">Patient ID</label>
+    <input type="text" class="form-control" id="patientID" name="patientID" placeholder="Enter Patient ID" />
+  </div>
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-success">Save Result</button>
+  </div>
+</form>
+
+{% endblock %}
