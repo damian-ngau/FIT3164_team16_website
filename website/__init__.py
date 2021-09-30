@@ -9,7 +9,7 @@ DB_NAME = "database.db"
 def create_app():
 	app = Flask(__name__)
 	app.config['SECRET_KEY'] = 'secretkey'
-	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rxntztzcimolbf:b9552a4087845273bf0780ee1d607ce4aa5aeffc6fdec1edacbffb7607eada6c@ec2-52-207-47-210.compute-1.amazonaws.com:5432/d8jmp9cuqupt0l'
+	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 	db.init_app(app)
 
