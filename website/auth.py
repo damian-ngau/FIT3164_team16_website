@@ -106,7 +106,7 @@ def save_result():
 		
 
 		# user has not uploaded image, redirect to home page
-		if not percentage:
+		if not cancer_percentage:
 			flash('No Image Uploaded', category='error')
 		else: 
 			new_result = Result(note=add_note, percentage = add_note, patient_id=selected_patient)
