@@ -37,7 +37,13 @@
 <form method="POST" class="container upload_form2" action="/save_result">
   <div class="form-group">
     <label for="patientID">Patient ID</label>
-    <input type="text" class="form-control" id="patientID" name="patientID" placeholder="Enter Patient ID" />
+    
+    <select name="patientID" method="GET" >
+    {% for patient in user.patients %}
+        <option value="{{ patient.id }}" SELECTED>{{ patient.id }}</option>"
+    {% endfor %}
+    </select>
+    
   </div>
   <textarea name="note" id="note" class="form-control"></textarea>
   <br />
