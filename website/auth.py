@@ -114,7 +114,7 @@ def save_result():
 			db.session.commit()
 			flash('Saved Result', category='success')
 			return redirect(url_for('views.home'))
-	return render_template("home.html", user=current_user)
+	# return render_template("home.html", user=current_user)
 
 
 @auth.route('/upload_image', methods=['GET', 'POST'])
