@@ -107,7 +107,7 @@ def save_result():
 
 		# user has not uploaded image, redirect to home page
 		if cancer_percentage==" ":
-			flash('No Image Uploaded', category='error')
+			flash('No Image Submitted', category='error')
 		else: 
 			new_result = Result(note=add_note, percentage=cancer_percentage, patient_id=selected_patient)
 			db.session.add(new_result)
