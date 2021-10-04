@@ -22,5 +22,5 @@ class Result(db.Model):
     data = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
-
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
