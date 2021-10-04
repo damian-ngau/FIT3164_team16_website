@@ -95,21 +95,21 @@ def result_history(patient_id):
 @login_required
 def save_result():
 	if request.method == 'POST':
-		# makes the user to fill out a section where they can type the patient ID
+		# select a patient ID
 		selected_patient = request.form.get('patientID')
+		
+		# percentage of the cancer image
+		percentage = request.form.get('percentage')
+		
 		# note created by user
 		note = request.form.get('note')
+		
 
-		# check if the patient ID that the user does not exist
-		patient = db.session.query(Patient.id).filter_by(id=selected_patient).first() is not None
-
-		# patient ID does not exist, redirect to home page
-		if not patient:
-			flash('Patient ID does not exist.', category='error')
-		elif len(note) < 1:
-			flash('Note is too short', category='error')
+		# user has not uploaded image, redirect to home page
+		if not percentage:
+			flash('No Image Uploaded', category='error')
 		else: 
-			new_result = Result(data=note, patient_id=selected_patient)
+			new_result = Result(note=note, patient_id=selected_patient)
 			db.session.add(new_result)
 			db.session.commit()
 			flash('Saved Result', category='success')
