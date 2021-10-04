@@ -40,11 +40,21 @@
     
     <select name="patientID" method="GET" >
     {% for patient in user.patients %}
-        <option value="{{ patient.id }} {{ patient.first_name }}" SELECTED>{{ patient.id }} {{ patient.first_name }}</option>"
+        <option value="{{ pred_lab }} {{ pred_perc }}" SELECTED>{{ pred_lab }} {{ pred_perc }}</option>"
     {% endfor %}
     </select>
-    
   </div>
+  
+  <div class="form-group">
+    <label for="patientID">Patient ID</label>
+    
+    <select name="percentage" method="GET" >
+    <option value="{{ patient.id }} {{ patient.first_name }}" SELECTED>{{ patient.id }} {{ patient.first_name }}</option>"
+    </select>
+  </div>
+  
+  
+  
   <label for="note">Additional Notes</label>
   <textarea name="note" id="note" class="form-control"></textarea>
   <br />
