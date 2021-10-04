@@ -115,6 +115,7 @@ def save_result():
 			flash('Saved Result', category='success')
 			return redirect(url_for('views.home'))
 	# return render_template("home.html", user=current_user)
+	redirect(request.url)
 
 
 @auth.route('/upload_image', methods=['GET', 'POST'])
