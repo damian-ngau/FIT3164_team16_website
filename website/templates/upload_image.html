@@ -40,7 +40,7 @@
     
     <select name="patientID" method="GET" >
     {% for patient in user.patients %}
-        <option value="{{ patient.id }} {{ patient.first_name }}" SELECTED>{{ patient.id }}</option>"
+        <option value="{{ patient.id }}" SELECTED>{{ patient.id }} {{ patient.first_name }}</option>"
         
     {% endfor %}
     </select>
