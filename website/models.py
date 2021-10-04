@@ -19,7 +19,7 @@ class Patient(db.Model):
 
 class Result(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.String(10000))
+    note = db.Column(db.String(10000))
     percentage = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     patient_id = db.Column(db.Integer, db.ForeignKey('patient.id'))
