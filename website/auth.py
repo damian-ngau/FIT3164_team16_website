@@ -99,17 +99,17 @@ def save_result():
 		selected_patient = request.form.get('patientID')
 		
 		# percentage of the cancer image
-		percentage = request.form.get('percentage')
+		cancer_percentage = request.form.get('percentage')
 		
 		# note created by user
-		note = request.form.get('note')
+		add_note = request.form.get('note')
 		
 
 		# user has not uploaded image, redirect to home page
 		if not percentage:
 			flash('No Image Uploaded', category='error')
 		else: 
-			new_result = Result(note=note, patient_id=selected_patient)
+			new_result = Result(note=add_note, percentage = add_note, patient_id=selected_patient)
 			db.session.add(new_result)
 			db.session.commit()
 			flash('Saved Result', category='success')
