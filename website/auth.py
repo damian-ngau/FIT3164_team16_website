@@ -109,7 +109,7 @@ def save_result():
 		if not cancer_percentage:
 			flash('No Image Uploaded', category='error')
 		else: 
-			new_result = Result(note=add_note, percentage = add_note, patient_id=selected_patient)
+			new_result = Result(note=add_note, percentage=cancer_percentage, patient_id=selected_patient)
 			db.session.add(new_result)
 			db.session.commit()
 			flash('Saved Result', category='success')
