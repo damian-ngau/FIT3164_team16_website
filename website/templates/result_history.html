@@ -13,13 +13,17 @@
 				<thead>
 					<tr>
 						<th>Result ID</th>
+						<th>Date</th>
+						<th>Percentage</th>
 						<th>Note</th>
 					</tr>
 				</tr>
 				{% for result in patient.results %}
 				<tr>
 					<td>{{ result.id }}</td>
-					<td>{{ result.data }}</td>
+					<td>{{ result.date }}</td>
+					<td>{{ result.percentage }}</td>
+					<td>{{ result.note }}</td>
 				</tr>
 				{% endfor %}
 			</table>
