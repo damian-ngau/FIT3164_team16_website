@@ -147,7 +147,7 @@ def predict_label(img_path):
 @login_required
 def get_output():
 	if request.method == 'POST':
-		if not os.path.exists(my_image):
+		if not os.path.exists('my_image'):
 			flash('No Image Selected', category='error')
 			return render_template("upload_image.html", user=current_user)
 		
