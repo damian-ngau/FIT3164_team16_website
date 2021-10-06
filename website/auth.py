@@ -10,7 +10,6 @@ from flask_login import login_user, login_required, logout_user, current_user
 from keras.models import load_model
 from keras.preprocessing import image
 
-import os.path
 
 
 auth = Blueprint('auth', __name__)
@@ -147,7 +146,7 @@ def predict_label(img_path):
 @login_required
 def get_output():
 	if request.method == 'POST':
-		if not os.path.exists('my_image'):
+		if request.files['my_image'].filename == '':
 			flash('No Image Selected', category='error')
 			return render_template("upload_image.html", user=current_user)
 		
