@@ -145,6 +145,10 @@ def predict_label(img_path):
 @login_required
 def get_output():
 	if request.method == 'POST':
+		if 'my_image'not in request.files:
+			flash('No Image Selected', category='error')
+			return render_template("upload_image.html", user=current_user)
+		
 		img = request.files['my_image']
 
 		show_image = "static/" + img.filename
