@@ -155,7 +155,7 @@ def get_output():
 		list_ext = ['.jpg', '.png', '.jpeg']
 		upload_ext = os.path.splitext(request.files['my_image'].filename)
 		if upload_ext[1] not in list_ext:
-			flash('File must be .jpg, , .jpeg, or .png', category='error')
+			flash('File must be .jpg, .jpeg, or .png', category='error')
 			return render_template("upload_image.html", user=current_user)
 			
 		img = request.files['my_image']
