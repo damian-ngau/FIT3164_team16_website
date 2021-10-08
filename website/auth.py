@@ -10,6 +10,8 @@ from flask_login import login_user, login_required, logout_user, current_user
 from keras.models import load_model
 from keras.preprocessing import image
 
+import os
+
 
 
 auth = Blueprint('auth', __name__)
@@ -149,6 +151,13 @@ def get_output():
 		if request.files['my_image'].filename == '':
 			flash('No Image Selected', category='error')
 			return render_template("upload_image.html", user=current_user)
+		
+		list_ext = ['.jpg', '.png', '.jpeg']
+		upload_ext = os.path.splitext(request.files['my_image'].filename)
+			if upload_ext not in list_ext:
+				flash('File must be .jpg, , .jpeg, or .png', category='error')
+				return render_template("upload_image.html", user=current_user)
+			
 		
 		img = request.files['my_image']
 
