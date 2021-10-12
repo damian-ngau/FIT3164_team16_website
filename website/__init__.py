@@ -4,9 +4,12 @@ from os import path
 import os
 from flask_login import LoginManager
 
+# creates the database
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
+# replaces the local database with the Heroku PostgreSQL database
+# initializes the application
 def create_app():
 	app = Flask(__name__)
 	app.config['SECRET_KEY'] = 'secretkey'
