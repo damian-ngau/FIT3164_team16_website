@@ -16,6 +16,12 @@ import os
 
 auth = Blueprint('auth', __name__)
 
+# Login Route
+# This route appears on the login page of the website
+# It checks if the login details are correct
+# Input: Email and Password
+# Output: Redirects users to the home page
+# Error: Flashes an error and returns the user to the login page again
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -34,12 +40,21 @@ def login():
             flash('Email does not exist.', category='error')
     return render_template("login.html", user=current_user)
 
+# Logout Route
+# This route appears on the home screen where the user is able to log out
+# Input: Log out Button
+# Output: Redirects user to login page
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+# Sign up Route
+# This route appears on the Login page where the user is able to sign up
+# Input: Email, Name, Password
+# Output: Redirects user to the home page
+# Error: Returns user to the sign up page with appropraite error messages if inputs are not satisfied
 @auth.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
 	if request.method == 'POST':
@@ -74,6 +89,11 @@ def sign_up():
 
 	return render_template("sign_up.html", user=current_user)
 
+# Create patient route
+# This route appears on as a button on the navigation bar where the user is able to create a patient
+# Input: Name
+# Output: Saves patient in database and patient can be seen on the home page
+# Error: If the first name is not at least 1 character long, the user returns to the create patient page
 @auth.route('/create_patient', methods=['GET', 'POST'])
 @login_required
 def create_patient():
@@ -90,7 +110,8 @@ def create_patient():
 
 	return render_template("create_patient.html", user=current_user)
 
-
+# Result history route
+# This route appears on the home page where the user is able to see the patients result history
 @auth.route('/result_history/<int:patient_id>')
 @login_required
 def result_history(patient_id):
@@ -98,6 +119,11 @@ def result_history(patient_id):
 	return render_template("result_history.html", patient=patient, user=current_user)
 
 
+# Save result route
+# This route appears on the upload image page and ensures that the details the user uploads and saved are correct
+# Input: Selection of patients, cancer image, additional notes
+# Output: Saved result to selected patient
+# Error: If requirements are not met, appropriate error messages are flashed to the user 
 @auth.route('/save_result', methods=['GET', 'POST'])
 @login_required
 def save_result():
@@ -124,19 +150,22 @@ def save_result():
 	return render_template("upload_image.html", user=current_user)
 
 
-
+# Upload Image route
+# Takes the user to the upload image page
 @auth.route('/upload_image', methods=['GET', 'POST'])
 @login_required
 def upload_image():
 	return render_template("upload_image.html", user=current_user)
 
-########################
-########################
+
 ########################
 # machine learning model
+########################
 
+# loads the model
 model = load_model('best_model.h5')
 
+# converts the input image into the correct image size for the model
 def predict_label(img_path):
 	i = image.load_img(img_path, target_size=(200,200))
 	i = image.img_to_array(i) 
@@ -144,6 +173,11 @@ def predict_label(img_path):
 	p = model.predict(i)
 	return p
 
+# Get output route
+# Takes the image that the user has uploaded and puts it through the machine learning model
+# Input: Cancer Image
+# Output: Result from the machine learning model
+# Error: If requirements are not met, appropriate error messages are flashed to the user 
 @auth.route("/get_output", methods = ['GET', 'POST'])
 @login_required
 def get_output():
