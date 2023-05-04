@@ -15,6 +15,8 @@ The website is aimed towards medical professionals who can utilise the platform 
 
 Dataset of histological images can be found on [kaggle](https://www.kaggle.com/datasets/joangibert/tcga_coad_msi_mss_jpg)
 
+<br>
+
 ## Screenshots
 ### Log In Page
 <img width="1920" alt="loginPage" src="https://user-images.githubusercontent.com/49575407/236291419-ddf59653-e42f-4880-b8bd-6a0bd37646a6.png">
@@ -33,3 +35,25 @@ Dataset of histological images can be found on [kaggle](https://www.kaggle.com/d
 
 ### Results Page
 <img width="1920" alt="resultPage" src="https://user-images.githubusercontent.com/49575407/236291786-9176bdeb-0866-4d39-bdf3-ed8b0e239b5c.png">
+
+<br>
+
+## Demo 
+### Signing Up
+https://user-images.githubusercontent.com/49575407/236292751-34c10fa7-6505-4d5a-88bd-d2855be39044.mp4
+
+<br>
+
+### Logging In
+https://user-images.githubusercontent.com/49575407/236292905-22cab6ca-bbd0-4238-a097-cfdf8973f61f.mp4
+
+<br>
+
+### Creating Patient 
+https://user-images.githubusercontent.com/49575407/236293092-acc02514-9762-4082-aaa9-12807b3ff58f.mp4
+
+<br>
+
+### Uploading and Saving Result
+https://user-images.githubusercontent.com/49575407/236293285-e9d58f58-a8de-4fc1-a8e4-d3af55f0a1ee.mp4
+
