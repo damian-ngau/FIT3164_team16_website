@@ -5,7 +5,7 @@ Developed a website that utilises a CNN model to detect microsatellite instabili
 Gastrointestinal Cancer Tumours are often referred to as having an "MSI status", meaning they will either be MSI or MSS - not both. 
 Determining the MSI status is extremely important as it dictates the type of treatment needed for the tumour.
 
-The website is aimed towards medical professionals who can utilise the platform to assist their work. They can create an account to manage patients with gastrointestinal cancer tumours. Histological images are uploaded and results from the deep learning algorithm are saved to patients.
+The website is aimed towards medical professionals who can utilise the platform to assist their work. They can create an account to manage patients with gastrointestinal cancer tumours. They can upload Histological images and results from the deep learning algorithm are saved to patients.
 
 - Developed the website using Flask framework and SQLAlchemy ORM.
 
