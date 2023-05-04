@@ -17,27 +17,6 @@ Dataset of histological images can be found on [kaggle](https://www.kaggle.com/d
 
 <br>
 
-## Screenshots
-### Log In Page
-<img width="1920" alt="loginPage" src="https://user-images.githubusercontent.com/49575407/236291419-ddf59653-e42f-4880-b8bd-6a0bd37646a6.png">
-
-<br>
-
-### Home Page
-<img width="1920" alt="homePage" src="https://user-images.githubusercontent.com/49575407/236292073-a3a62b21-3d1b-4d7c-a7db-627c5127ee68.png">
-
-<br>
-
-### Patient Page
-<img width="1920" alt="patientPage" src="https://user-images.githubusercontent.com/49575407/236291736-b5325e1d-75a9-40f9-a966-598f3b793631.png">
-
-<br>
-
-### Results Page
-<img width="1920" alt="resultPage" src="https://user-images.githubusercontent.com/49575407/236291786-9176bdeb-0866-4d39-bdf3-ed8b0e239b5c.png">
-
-<br>
-
 ## Demo 
 ### Signing Up
 https://user-images.githubusercontent.com/49575407/236292751-34c10fa7-6505-4d5a-88bd-d2855be39044.mp4
